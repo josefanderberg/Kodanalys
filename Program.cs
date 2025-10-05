@@ -30,8 +30,8 @@ namespace Kodanalys
                         string userName = Console.ReadLine()!;
                         if (users.Count < maxUsers)
                         {
-                            users.Add (new User (userName));
-                            
+                            users.Add(new User(userName));
+                            Console.WriteLine("Användaren har lagts till.");
                         }
                         else
                         {
@@ -40,9 +40,9 @@ namespace Kodanalys
                         break;
                     case "2":
                         Console.WriteLine("Användare:");
-                        foreach (string u in users.Select(user => user.Name))
+                        foreach (string user in users.Select(user => user.Name))
                         {
-                            Console.WriteLine(u);
+                            Console.WriteLine(user);
                         }
                         break;
                     case "3":
@@ -75,10 +75,9 @@ namespace Kodanalys
                         break;
                     case "5":
                         isRunning = false;
-                        break;
+                        return;
                     default:
                         Console.WriteLine("Ogiltigt val.");
-                        Console.ReadKey();
                         break;
                 }
                 Console.WriteLine("Tryck på valfri tangent för att fortsätta...");
